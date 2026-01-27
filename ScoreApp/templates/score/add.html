@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    .card-header-custom {
+        background-color: #198754;
+        color: white;
+        padding: 15px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .btn-blue {
+        background-color: #198754;
+        color: white;
+        border: none;
+    }
+    .btn-blue:hover {
+        background-color: #198754;
+    }
+    .card {
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+.card-header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card-body {
+    padding: 20px;
+}
+{% endblock %}
+
+{% block content %}
+<div class="card mt-5">
+    <div class="card-header card-header-custom">
+        <h4>Register New Score</h4>
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Score</label>
+                <input type="number" name="score" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-blue">Add Score</button>
+            <a href="{% url 'score_list' %}" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

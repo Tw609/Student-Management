@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    body { background-color: #e8f5e9; }
+    .card-header { background-color: #198754; color: white; }
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow-sm border-success">
+            <div class="card-header">
+                <h4 class="mb-0">Update Score </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Student Name</label>
+                        <input type="text" name="name" class="form-control border-success" 
+                               value="{{ score.name }}" >
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Student Score</label>
+                        <input type="text" name="score" class="form-control border-success" 
+                               value="{{ score.score }}" required>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">Update Score</button>
+                        <a href="{% url 'score_list' %}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

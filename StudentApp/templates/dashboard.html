@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Control Panel</h2>
+<div class="row text-center">
+    <div class="col-md-6">
+        <div class="card border-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Student Management</h5>
+                <p class="card-text">Manage all internal Student.</p>
+                <a href="{% url 'student_list' %}" class="btn btn-outline-primary">Go to StudentApp</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-success">Score Management</h5>
+                <p class="card-text">Manage Student Score.</p>
+                <a href="{% url 'score_list' %}" class="btn btn-outline-success">Go to ScoreApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
