@@ -45,7 +45,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Score</label>
-                <input type="number" name="score" class="form-control" required>
+                <input type="number" name="score" step="any" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-blue">Add Score</button>
             <a href="{% url 'score_list' %}" class="btn btn-outline-secondary">Cancel</a>
